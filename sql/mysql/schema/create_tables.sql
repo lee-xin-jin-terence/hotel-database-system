@@ -24,10 +24,10 @@ CREATE TABLE Room (
 CREATE TABLE Booking (
     bookingId INT AUTO_INCREMENT PRIMARY KEY,
     roomId INT NOT NULL,
-    checkingInDate DATE,
+    checkingInDate DATE NOT NULL,
     checkingOutDate DATE,
-    bookingDate DATE DEFAULT CURRENT_DATE,
-    status VARCHAR(50),
+    bookingDate DATE NOT NULL,
+    status VARCHAR(50) NOT NULL,
     FOREIGN KEY (roomId) REFERENCES Room(roomId)
 ) ENGINE=InnoDB;
 
@@ -55,7 +55,7 @@ CREATE TABLE BookingGuest (
 CREATE TABLE Payment (
     paymentId INT AUTO_INCREMENT PRIMARY KEY,
     bookingId INT NOT NULL,
-    paymentDate DATE DEFAULT CURRENT_DATE,
+    paymentDate DATE NOT NULL,
     amount DECIMAL(10, 2),
     paymentMethod VARCHAR(50),
     status VARCHAR(50),
