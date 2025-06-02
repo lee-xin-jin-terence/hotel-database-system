@@ -4,7 +4,7 @@ INSERT INTO Hotel (name, address, phoneNumber, emailAddress) VALUES
 ('Mountain View Inn', '456 Alpine Rd, Denver, CO 80202', '+1-720-555-0202', 'info@mountainviewinn.com'),
 ('City Central Suites', '789 Downtown St, New York, NY 10001', '+1-212-555-0303', 'reservations@citycentralsuites.com');
 
--- Insert Rooms (assume hotelIds = 1, 2, 3)
+-- Insert Rooms
 INSERT INTO Room (hotelId, roomNumber, roomType, capacity, pricePerNight) VALUES
 (1, '101', 'Standard', 2, 150.00),
 (1, '102', 'Deluxe', 3, 220.00),
@@ -24,7 +24,7 @@ INSERT INTO Guest (firstName, lastName, phoneNumber, emailAddress, address) VALU
 ('Diana', 'Evans', '+1-305-555-1111', 'diana.evans@example.com', '123 Ocean Blvd, Miami, FL'),
 ('Ethan', 'Wilson', '+1-720-555-2222', 'ethan.wilson@example.com', '456 Hill Rd, Denver, CO');
 
--- Insert Bookings (assume roomIds from 1 to 9 in order inserted)
+-- Insert Bookings 
 INSERT INTO Booking (roomId, checkingInDate, checkingOutDate, bookingDate, status) VALUES
 (1, '2025-07-01', '2025-07-05', '2025-06-15', 'Confirmed'),
 (2, '2025-07-10', '2025-07-15', '2025-06-20', 'Checked-in'),
@@ -46,7 +46,7 @@ INSERT INTO BookingGuest (bookingId, guestId, isPrimary) VALUES
 (6, 4, 1),
 (7, 5, 1);
 
--- Insert Payments (assume bookingIds = 1 to 7)
+-- Insert Payments 
 INSERT INTO Payment (bookingId, paymentDate, amount, paymentMethod, status) VALUES
 (1, '2025-06-15', 600.00, 'Credit Card', 'Paid'),
 (2, '2025-06-20', 1100.00, 'PayPal', 'Paid'),
